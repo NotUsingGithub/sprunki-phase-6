@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprunki Phase 6: The Ultimate Music Creation Experience | Rock Your Beat</title>
+    <meta name="description" content="Play Sprunki Phase 6, the latest evolution of music creation games like Incredibox. Create amazing beats, unlock Sprunki modes, and master rhythm patterns in this advanced musical playground.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Sprunki Phase 6",
+      "description": "Advanced music creation game with Incredibox-style gameplay featuring multiple Sprunki modes",
+      "genre": ["Music", "Rhythm", "Educational"],
+      "gamePlatform": ["Web Browser", "HTML5"],
+      "applicationCategory": "Game"
+    }
+    </script>
+    <link rel="icon" type="image/png" href="1.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        
+        :root {
+            --neon-text-color: #f40;
+            --neon-border-color: #08f;
+        }
+        
+        body {
+            font-family: 'Audiowide', cursive;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-text-color);
+        }
+        .hero {
+            background: url('https://source.unsplash.com/random/1600x900?concert') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 3em;
+            animation: gentleGlow 4s ease-in-out infinite alternate;
+        }
+        @keyframes gentleGlow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-text-color);
+            }
+            to {
+                text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-text-color), 0 0 15px var(--neon-border-color);
+            }
+        }
+        .game-container {
+            width: 100%;
+            height: 600px;
+            margin: 20px 0;
+            border: 4px solid var(--neon-border-color);
+            box-shadow: 0 0 20px var(--neon-border-color);
+            animation: borderPulse 2s infinite;
+        }
+        @keyframes borderPulse {
+            0% { box-shadow: 0 0 20px var(--neon-border-color); }
+            50% { box-shadow: 0 0 40px var(--neon-border-color), 0 0 60px var(--neon-border-color); }
+            100% { box-shadow: 0 0 20px var(--neon-border-color); }
+        }
+        .section {
+            background-color: rgba(20, 20, 20, 0.8);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 2px solid var(--neon-border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 255, 255, 0.1) 20px,
+                rgba(255, 255, 255, 0.1) 40px
+            );
+            animation: moveLines 10s linear infinite;
+        }
+        @keyframes moveLines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(40px); }
+        }
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px var(--neon-border-color);
+        }
+        .review {
+            background-color: rgba(40, 40, 40, 0.8);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid var(--neon-text-color);
+        }
+        .faq {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .faq h3 {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .faq h3:hover {
+            color: var(--neon-text-color);
+        }
+        .faq p {
+            display: none;
+            padding-left: 20px;
+            border-left: 2px solid var(--neon-text-color);
+        }
+        .neon-nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .neon-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .neon-nav li {
+            margin: 0 15px;
+        }
+        .neon-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .neon-nav a:hover {
+            color: var(--neon-text-color);
+            text-shadow: 0 0 5px var(--neon-text-color), 0 0 10px var(--neon-text-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="neon-nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../music-games.html">Music Games</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Sprunki Phase 6: The Ultimate Music Creation Experience</h1>
+    </div>
+
+    <div class="container">
+        <div class="game-container">
+            <iframe src="https://iframegame.com/embed/sprunki-phase-6/index.html" style="width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="section">
+            <h2>Experience Sprunki Phase 6: Beyond Incredibox</h2>
+            <p>Sprunki Phase 6 revolutionizes music creation gaming with its innovative approach to rhythm and beat-making. Building on the beloved formula of games like Incredibox, Sprunki introduces the groundbreaking Harmonic Fusion System™ that takes musical interaction to new heights.</p>
+        </div>
+
+        <div class="section">
+            <h2>Sprunki Modes: Unleash Your Creativity</h2>
+            <ul>
+                <li>Classic Sprunki Mode: Perfect for beginners learning the basics</li>
+                <li>Fusion Mode: Combine elements from different musical styles</li>
+                <li>Pro Mode: Advanced features for experienced beat makers</li>
+                <li>Freestyle Mode: Create without limitations</li>
+                <li>Performance Mode: Share your creations live</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>What Players Say About Sprunki Phase 6</h2>
+            <div class="review">
+                <p>"Sprunki Phase 6 takes everything we loved about Incredibox and amplifies it tenfold." - MusicTech Magazine</p>
+            </div>
+            <div class="review">
+                <p>"The various Sprunki modes offer unprecedented creative freedom." - Gaming Excellence</p>
+            </div>
+            <div class="review">
+                <p>"The most sophisticated rhythm game ever created. It's like having a music theory course wrapped in an addictive game." - GamersUnite</p>
+            </div>
+            <div class="review">
+                <p>"The real-time composition features in Phase 6 are nothing short of revolutionary." - Digital Arts</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sprunki Phase 6 FAQ</h2>
+            <div class="faq">
+                <h3>Q: How does Sprunki Phase 6 compare to Incredibox?</h3>
+                <p>A: While inspired by Incredibox's intuitive design, Sprunki Phase 6 introduces advanced features like the Harmonic Fusion System™ and multiple Sprunki modes, offering a deeper music creation experience.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: What are the different Sprunki modes available?</h3>
+                <p>A: Sprunki Phase 6 features Classic, Fusion, Pro, Freestyle, and Performance modes, each offering unique ways to create and interact with music.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: What makes Phase 6 different from previous versions?</h3>
+                <p>A: Phase 6 introduces the Harmonic Fusion System, advanced music theory integration, and professional-grade composition tools, making it the most comprehensive music gaming experience yet.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: Do I need musical knowledge to play?</h3>
+                <p>A: While musical knowledge can be helpful, the game includes comprehensive tutorials and adaptive learning systems to help players of all skill levels.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: What are the Orchestral Challenges?</h3>
+                <p>A: These are special modes where players conduct virtual orchestras, controlling tempo, dynamics, and expression in real-time.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: Can I compose my own music?</h3>
+                <p>A: Yes! The real-time composition tools allow you to create, edit, and share original musical pieces with the Sprunki community.</p>
+            </div>
+            <div class="faq">
+                <h3>Q: Are there professional features?</h3>
+                <p>A: Yes, Phase 6 includes professional-grade analytics, composition tools, and performance metrics suitable for serious musicians.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Getting Started with Sprunki Phase 6</h2>
+            <p>Whether you're new to music creation games or a seasoned Incredibox player, Sprunki Phase 6 offers an intuitive yet powerful platform for musical expression. Start with the Classic Sprunki mode to learn the basics, then explore advanced features in Pro and Fusion modes.</p>
+            
+            <h3>Key Features of Sprunki Phase 6:</h3>
+            <ul>
+                <li>Multiple Sprunki modes for different skill levels</li>
+                <li>Incredibox-inspired interface with advanced capabilities</li>
+                <li>Real-time beat creation and mixing</li>
+                <li>Advanced rhythm pattern recognition</li>
+                <li>Community sharing features</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Evolution of Sprunki: From Phase 1 to Phase 6</h2>
+            <p>The journey of Sprunki from its inception to Phase 6 represents a remarkable evolution in music gaming. While Phase 1 introduced basic beat-making, and subsequent phases added layers of complexity, Phase 6 stands as the pinnacle of musical innovation in the series.</p>
+            
+            <h3>Historical Timeline:</h3>
+            <ul>
+                <li>Phase 1-2: Foundation of rhythm mechanics</li>
+                <li>Phase 3-4: Introduction of advanced beat patterns</li>
+                <li>Phase 5: Implementation of basic Sprunki modes</li>
+                <li>Phase 6: Revolutionary Harmonic Fusion System™ and complete mode overhaul</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Deep Dive into Sprunki Modes</h2>
+            <h3>Classic Sprunki Mode</h3>
+            <p>The foundation of the Sprunki experience, Classic Mode introduces players to the core mechanics of beat creation. Features include:</p>
+            <ul>
+                <li>16-track mixing board</li>
+                <li>Basic rhythm patterns</li>
+                <li>Intuitive drag-and-drop interface</li>
+                <li>Beginner-friendly tutorials</li>
+            </ul>
+
+            <h3>Fusion Mode</h3>
+            <p>The most innovative addition to Phase 6, Fusion Mode allows players to:</p>
+            <ul>
+                <li>Blend multiple musical genres</li>
+                <li>Create cross-rhythm patterns</li>
+                <li>Experiment with polyrhythmic structures</li>
+                <li>Access an expanded sound library</li>
+            </ul>
+
+            <h3>Pro Mode</h3>
+            <p>Designed for advanced users, Pro Mode includes:</p>
+            <ul>
+                <li>Complex harmonic progressions</li>
+                <li>Advanced mixing capabilities</li>
+                <li>Custom sound design tools</li>
+                <li>Professional export options</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Sprunki Phase 6 Technical Innovations</h2>
+            <h3>Harmonic Fusion System™</h3>
+            <p>The cornerstone of Phase 6's success, this system introduces:</p>
+            <ul>
+                <li>Real-time harmonic analysis</li>
+                <li>Dynamic chord progression suggestions</li>
+                <li>Intelligent rhythm matching</li>
+                <li>Advanced beat synchronization</li>
+            </ul>
+
+            <h3>Sound Engine Improvements</h3>
+            <p>Phase 6 introduces significant audio processing upgrades:</p>
+            <ul>
+                <li>64-bit audio processing</li>
+                <li>Zero-latency monitoring</li>
+                <li>Advanced reverb algorithms</li>
+                <li>Studio-quality sound library</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Community and Social Features</h2>
+            <p>Sprunki Phase 6 transforms music creation into a social experience with:</p>
+            <ul>
+                <li>Global leaderboards for each Sprunki mode</li>
+                <li>Community challenge events</li>
+                <li>Collaborative creation rooms</li>
+                <li>Pattern sharing marketplace</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Learning Path and Progression</h2>
+            <h3>Beginner Track</h3>
+            <p>Start your journey with:</p>
+            <ul>
+                <li>Basic rhythm tutorials</li>
+                <li>Simple pattern creation</li>
+                <li>Fundamental music theory</li>
+                <li>Beat matching exercises</li>
+            </ul>
+
+            <h3>Intermediate Development</h3>
+            <p>Progress through:</p>
+            <ul>
+                <li>Complex rhythm structures</li>
+                <li>Advanced pattern combinations</li>
+                <li>Genre-specific techniques</li>
+                <li>Custom sound design</li>
+            </ul>
+
+            <h3>Advanced Mastery</h3>
+            <p>Achieve expertise with:</p>
+            <ul>
+                <li>Professional composition techniques</li>
+                <li>Advanced Sprunki mode mastery</li>
+                <li>Custom pattern creation</li>
+                <li>Performance optimization</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Sprunki Phase 6 vs. Other Music Games</h2>
+            <p>While games like Incredibox pioneered musical creativity, Sprunki Phase 6 elevates the experience with:</p>
+            <ul>
+                <li>More sophisticated rhythm mechanics</li>
+                <li>Deeper musical theory integration</li>
+                <li>Advanced composition tools</li>
+                <li>Professional-grade features</li>
+                <li>Enhanced social capabilities</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Future Updates and Roadmap</h2>
+            <p>The Sprunki development team continues to enhance Phase 6 with planned features including:</p>
+            <ul>
+                <li>New Sprunki modes and variations</li>
+                <li>Expanded sound libraries</li>
+                <li>Enhanced collaboration tools</li>
+                <li>Mobile compatibility</li>
+                <li>Virtual reality integration</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq h3').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
